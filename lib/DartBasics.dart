@@ -1,5 +1,21 @@
 // https://dartpad.dartlang.org/
 
+class Person {
+  String? name;
+  int? age;
+
+  Person({String? inputName, int? age = 43}) {
+    name = inputName;
+    this.age = age;
+  }
+
+  Person.veryOld(this.name) {
+    age = 80;
+  }
+
+}
+
+
 void main() {
   for (int i = 0; i < 5; i++) {
     print('hello ${i + 1}');
@@ -11,20 +27,18 @@ void main() {
   String name = 'Mehmet';
   print (name);
 
-  var p1 = Person();
+  var p1 = Person(inputName: 'Mehmet');
   print(p1);
   print(p1.name);
-
+  print(p1.age);
+  
+  Person p3 = Person.veryOld('VeryOld');
+  print(p3.age);
+  
 }
 
 int addNumbers(int num1, int num2) {
   return num1 + num2;
-}
-
-
-class Person {
-  String name = 'Mehmet';
-  int age = 42;
 }
 
 
